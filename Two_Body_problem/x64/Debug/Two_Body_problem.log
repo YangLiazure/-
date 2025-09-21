@@ -1,0 +1,11 @@
+﻿  Kepler_calculate.cpp
+D:\C++_library\VS_library\eigen-3.4.0\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Kepler_calculate.cpp”)
+  
+D:\C++_library\VS_library\eigen-3.4.0\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Kepler_calculate.cpp”)
+  
+D:\C++_library\VS_library\eigen-3.4.0\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Kepler_calculate.cpp”)
+  
+  Two_Body_problem.vcxproj -> D:\桌面\大三上\卫星轨道原理\Two_Body_problem\x64\Debug\Two_Body_problem.exe
