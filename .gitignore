@@ -10,3 +10,13 @@ Release/
 
 # 忽略构建目录
 build/
+
+# Visual Studio
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.aps
+*.pdb
+*.obj
