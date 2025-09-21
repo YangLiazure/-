@@ -2,6 +2,7 @@
 #include <Eigen/Dense>
 #include <cmath>
 #include <stdexcept>
+#include<iomanip>
 
 using namespace std;
 using namespace Eigen;
@@ -254,20 +255,33 @@ int main() {
         double deltaTime = 3600.0;  // 1小时
         StateVector futureState = predictor.predict(initialState, deltaTime);
 
+        cout << fixed << setprecision(6);
         // 输出结果
         cout << "Initial position: " << initialState.position.transpose() << " km" << endl;
         cout << "Initial velocity: " << initialState.velocity.transpose() << " km/s" << endl;
         cout << "Future position: " << futureState.position.transpose() << " km" << endl;
         cout << "Future velocity: " << futureState.velocity.transpose() << " km/s" << endl;
 
+        
         // 验证轨道根数转换的准确性
         OrbitConverter converter;
         OrbitalElements elements = converter.stateToElements(initialState);
         StateVector reconstructedState = converter.elementsToState(elements);
 
+        OrbitalElements elements_future = converter.stateToElements(futureState);
+
+        cout <<endl<< "-------------Initial Keplerian orbital elements------------" << endl;
+        cout << "半长轴:" << elements.a <<"  偏心率:" << elements.e <<"  轨道倾角:" <<elements.i<<endl<<"近地点幅角:" << elements.omega << "  升交点赤经:" << elements.Omega <<"  真近点角:" << elements.f << endl;
+        
+        cout <<endl<< "-------------Future Keplerian orbital elements------------" << endl;
+        cout << "半长轴:" << elements_future.a << "  偏心率:" << elements_future.e << "  轨道倾角:" << elements_future.i << endl << "近地点幅角:" << elements_future.omega << "  升交点赤经:" << elements_future.Omega << "  真近点角:" << elements_future.f << endl;
+        
+        cout.unsetf(ios::fixed);
+        cout << setprecision(6); // 恢复默认精度设置
         // 用实际位置和预测位置的直线距离代表预测误差
         cout << "\nReconstruction error: "
             << (initialState.position - reconstructedState.position).norm() << " km" << endl;  
+
 
     }
     catch (const exception& e) {
