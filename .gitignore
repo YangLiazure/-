@@ -1,0 +1,12 @@
+# 忽略Visual Studio文件
+.vs/
+Debug/
+Release/
+
+# 忽略编译文件
+*.exe
+*.o
+*.out
+
+# 忽略构建目录
+build/
